@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Exec=/home/demonfox/lcs/omnetpp/bin/opp_ide
+Icon=/home/demonfox/lcs/omnetpp/images/logo/logo128.png
+Name=OMNeT++ 6.0 IDE
+Categories=Development
+

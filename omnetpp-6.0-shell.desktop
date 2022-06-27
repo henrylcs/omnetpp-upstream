@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Exec=/bin/bash --rcfile /home/demonfox/lcs/omnetpp/setenv
+Terminal=true
+Icon=/home/demonfox/lcs/omnetpp/images/logo/logo128s.png
+Name=OMNeT++ 6.0 Shell
+Categories=Development
+

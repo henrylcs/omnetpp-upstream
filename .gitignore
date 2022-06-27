@@ -42,7 +42,6 @@ autom4te.cache/
 /bin/*
 out/
 /lib/
-/samples/inet/
 Thumbs.db
 backups
 /ide
