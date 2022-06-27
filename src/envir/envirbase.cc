@@ -286,7 +286,7 @@ EnvirOptions::EnvirOptions()
     checkSignals = false;
     fnameAppendHost = false;
     warnings = true;
-    verbose = true;
+    verbose = false;
     useStderr = true;
     printUndisposed = true;
     realTimeLimit = 0;

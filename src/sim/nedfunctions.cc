@@ -879,6 +879,16 @@ DEF2(nedf_readXML,
 cValue nedf_readXML(cExpression::Context *context, cValue argv[], int argc)
 {
     std::string filepath = concatDirAndFile(context->baseDirectory, argv[0].stringValue());
+
+    // Check a few places
+    struct stat buffer;
+    if(stat (filepath.c_str(), &buffer) != 0) {
+    	filepath = argv[0].stringValue();
+        if(stat (filepath.c_str(), &buffer) != 0) {
+        	throw cRuntimeError("File \"%s\"not found", filepath.c_str());
+        }
+    }
+
     const char *xpath = argc == 1 ? nullptr : argv[1].stringValue();
     cXMLElement *node = getEnvir()->getXMLDocument(filepath.c_str(), xpath);
     if (!node) {
@@ -946,6 +956,7 @@ DEF2(nedf_readFile,
 
 cValue nedf_readFile(cExpression::Context *context, cValue argv[], int argc)
 {
+	// Let's check a few places for the file
     std::string filepath = concatDirAndFile(context->baseDirectory, argv[0].stringValue());
     std::ifstream in(filepath.c_str());
     if (in.fail())

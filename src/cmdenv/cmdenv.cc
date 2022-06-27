@@ -201,8 +201,6 @@ void Cmdenv::doRun()
                 const char *iterVars = cfg->getVariable(CFGVAR_ITERATIONVARS);
                 const char *runId = cfg->getVariable(CFGVAR_RUNID);
                 const char *repetition = cfg->getVariable(CFGVAR_REPETITION);
-                if (!opt->verbose)
-                    out << opt->configName << " run " << runNumber << ": " << iterVars << ", $repetition=" << repetition << endl; // print before redirection; useful as progress indication from opp_runall
 
                 if (opt->redirectOutput) {
                     processFileName(opt->outputFile);
